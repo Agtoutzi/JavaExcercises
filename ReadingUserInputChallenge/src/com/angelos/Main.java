@@ -6,12 +6,11 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int validNumbers = 0;
         int sum = 0;
 
-        int i = 1;
-        while (i <= 10) {
-            System.out.println("Enter number #" + i + ":");
+        int validNumbers = 1;
+        while (validNumbers <= 10) {
+            System.out.println("Enter number #" + validNumbers + ":");
             if (scanner.hasNextInt()) {
                 sum += scanner.nextInt();
                 validNumbers++;
@@ -20,10 +19,9 @@ public class Main {
             }
             scanner.nextLine();
 
-            i++;
         }
-        System.out.println("Sum of " + validNumbers + " valid numbers given is: " + sum);
-
         scanner.close();
+
+        System.out.println("Sum of given numbers is: " + sum);
     }
 }
