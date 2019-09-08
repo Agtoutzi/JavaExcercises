@@ -3,13 +3,8 @@ package com.angelos;
 public class Main {
 
     public static void main(String[] args) {
-        BankAccount account = new BankAccount();
-
-        account.setAccountNumber("AA123456");
-        account.setCustomerName("Angelos");
-        account.setCustomerMail("blahblah@blahmail.com");
-        account.setCustomerPhone(6900000000L);
-        account.setBalance(0);
+        BankAccount account = new BankAccount("AA123456", 0,
+                "Angelos", "blahblah@blahmail.com", 6900000000L);
 
         System.out.println(account.getAccountNumber());
         System.out.println(account.getCustomerName());

@@ -7,6 +7,21 @@ public class BankAccount {
     private String customerMail;
     private long customerPhone;
 
+    public BankAccount() {
+        this("1234", 0, "Default name", "Default mail", 12345L);
+        System.out.println("Empty constructor called");
+    }
+
+    public BankAccount(String accountNumber, double balance, String customerName, String customerMail, long customerPhone) {
+        this.accountNumber = accountNumber;
+        this.balance = balance;
+        this.customerName = customerName;
+        this.customerMail = customerMail;
+        this.customerPhone = customerPhone;
+
+        System.out.println("Constructor with parameters called");
+    }
+
     public String getAccountNumber() {
         return accountNumber;
     }
