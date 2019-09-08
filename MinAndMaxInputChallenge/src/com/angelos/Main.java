@@ -7,14 +7,20 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int min = Integer.MAX_VALUE;
-        int max = Integer.MIN_VALUE;
+        int min = 0;
+        int max = 0;
+        boolean first = true;
 
         while (true) {
             System.out.println("Enter number:");
 
             if (scanner.hasNextInt()) {
                 int number = scanner.nextInt();
+                if (first) {
+                    first=false;
+                    min = number;
+                    max = number;
+                }
                 if (number > max) {
                     max = number;
                 }
@@ -23,15 +29,16 @@ public class Main {
                 }
                 scanner.nextLine();
             } else {
-                if (min != Integer.MAX_VALUE) {
-                    System.out.println("The minimum given number is: " + min);
-                    System.out.println("The maximum given number is: " + max);
-                } else {
-                    System.out.println("No valid numbers given");
-                }
                 break;
             }
         }
         scanner.close();
+
+        if (!first) {
+            System.out.println("The minimum given number is: " + min);
+            System.out.println("The maximum given number is: " + max);
+        } else {
+            System.out.println("No valid numbers given");
+        }
     }
 }
