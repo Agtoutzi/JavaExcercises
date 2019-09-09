@@ -17,5 +17,12 @@ public class Main {
         account.withdrawFunds(50);
         account.withdrawFunds(50);
         account.withdrawFunds(50);
+
+        VipCustomer vipCustomer1 = new VipCustomer();
+        System.out.println("VIP 1: " + vipCustomer1.getName() + " " + vipCustomer1.getMailAddress() + " " + vipCustomer1.getCreditLimit());
+        VipCustomer vipCustomer2 = new VipCustomer("customer 2", "customer2@mail.com");
+        System.out.println("VIP 2: " + vipCustomer2.getName() + " " + vipCustomer2.getMailAddress() + " " + vipCustomer2.getCreditLimit());
+        VipCustomer vipCustomer3 = new VipCustomer("customer 3", 100, "customer3@mail.com");
+        System.out.println("VIP 3: " + vipCustomer3.getName() + " " + vipCustomer3.getMailAddress() + " " + vipCustomer3.getCreditLimit());
     }
 }
