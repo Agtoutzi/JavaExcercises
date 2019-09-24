@@ -9,9 +9,22 @@ public class Main {
         Motherboard theMotherboard = new Motherboard("BJ-200", "Asus", 4, 6, "v2.44");
 
         PC thePC = new PC(theCase, theMonitor, theMotherboard);
+        thePC.powerUp();
 
-        thePC.getMonitor().drawPixelAt(1500, 1200, "red");
-        thePC.getMotherboard().loadProgram("Windows 1.0");
-        thePC.getTheCase().pressPowerButton();
+
+        Size size = new Size(5000, 3000, 2800);
+        RoomColor roomColor = new RoomColor(12345);
+        FloorType floorType = new FloorType("Mastoras", "Wood");
+        Door door = new Door("Sec-S25", "Ballomenos doors", 100, 230, "white");
+        Couch couch = new Couch("Berlina", "Botos", 3, "grey", 35);
+        Chair chair = new Chair("S10", "Home Love", 120, "light-grey");
+        TV tv = new TV("SQ55H", "Samsung", 55, new Dimensions(90,65,13));
+        Light light = new Light("A45", "Philips", 45, "warm white");
+        LivingRoom livingRoom = new LivingRoom(size, roomColor, floorType, door, couch, chair, tv, light);
+
+        livingRoom.opernDoor();
+        livingRoom.openLight();
+        livingRoom.getCouch().sitOn();
+        livingRoom.openTV();
     }
 }
