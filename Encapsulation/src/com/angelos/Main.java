@@ -19,5 +19,22 @@ public class Main {
 
         EnhancedPlayer player = new EnhancedPlayer("Angelos", 150, "Sword");
         System.out.println("Initial health is " + player.getHealth());
+
+        Printer printerSingle = new Printer(false);
+        Printer printerDuplex = new Printer(true);
+
+        printerSingle.checkTonner();
+        printerDuplex.checkTonner();
+
+        printerSingle.printPages(990);
+        printerDuplex.printPages(103);
+
+        printerSingle.fillToner(10);
+        printerSingle.fillToner(10);
+        printerDuplex.fillToner(10);
+        printerDuplex.fillToner(10);
+
+        printerSingle.checkTonner();
+        printerDuplex.checkTonner();
     }
 }
