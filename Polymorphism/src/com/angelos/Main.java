@@ -69,11 +69,23 @@ class Forgettable extends Movie {
 public class Main {
 
     public static void main(String[] args) {
+        //for (int i = 1; i < 11; i++) {
+        //    Movie movie = randomMovie();
+        //    System.out.println("Movie #" + i +
+        //            " : " + movie.getName() + "\n" +
+        //            "Plot: " + movie.plot() + "\n");
+        //}
+
         for (int i = 1; i < 11; i++) {
-            Movie movie = randomMovie();
-            System.out.println("Movie #" + i +
-                    " : " + movie.getName() + "\n" +
-                    "Plot: " + movie.plot() + "\n");
+            Car car = randomCar();
+            System.out.println("Car #" + i +
+                    " : " + car.getName() + "\n" +
+                    "Cylinders: " + car.getCylinders() + "\n" +
+                    "Wheels: " + car.getWheels());
+            car.startEngine();
+            car.accelerate();
+            car.brake();
+            System.out.println();
         }
     }
 
@@ -91,6 +103,21 @@ public class Main {
                 return new StarWars();
             case 5:
                 return new Forgettable();
+            default:
+                return null;
+        }
+    }
+
+    public static Car randomCar() {
+        int randomNum = (int) (Math.random() * 3) + 1;
+        System.out.println("Random number generated was: " + randomNum);
+        switch (randomNum) {
+            case 1:
+                return new Nissan("Juke", 4);
+            case 2:
+                return new Skoda("Fabia", 3);
+            case 3:
+                return new Mercedes("Clk240", 6);
             default:
                 return null;
         }
